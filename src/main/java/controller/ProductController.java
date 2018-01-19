@@ -44,7 +44,8 @@ public class ProductController extends HttpServlet {
 			boolean b = pDAO.insertProduct(p);
 			
 			if (b) {
-				request.getRequestDispatcher("Success.html").forward(request, response);
+				request.setAttribute("products", pDAO.getProducts());
+				request.getRequestDispatcher("Success.jsp").forward(request, response);
 			}
 			else {
 				request.getRequestDispatcher("index.html").forward(request, response);

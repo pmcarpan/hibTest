@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -19,6 +21,15 @@ public class ProductDAO {
 			return false;
 		}
 		return true;
+	}
+	
+	public List<Product> getProducts() {
+		Session s = new DBConfig().getSess();
+		
+		@SuppressWarnings("unchecked")
+		List<Product> prod = (List<Product>) s.createQuery("from Product").list();
+		
+		return prod;
 	}
 	
 }

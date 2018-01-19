@@ -12,6 +12,12 @@ public class Product {
 	private String name;
 	private double price;
 	
+	public Product() {
+		id = 0;
+		name = "";
+		price = 0.0;
+	}
+	
 	public Product(int a, String b, double c) {
 		id = a;
 		name = b;
