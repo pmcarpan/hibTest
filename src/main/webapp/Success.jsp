@@ -9,6 +9,7 @@
 	<h2>Success!</h2>
 	<table>
 	<%
+		@SuppressWarnings("unchecked")
 		List<Product> products = (List<Product>) request.getAttribute("products");
 		for (Product p : products) {
 			out.println("<tr><td>" + p.getId() + "</td><td>" + p.getName() + "</td><td>" + p.getPrice() + "</td></tr>");
